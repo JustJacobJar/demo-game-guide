@@ -1,0 +1,347 @@
+/** @format */
+
+:root {
+  --color-base-100: oklch(30.857% 0.023 264.149);
+  --color-base-200: oklch(28.036% 0.019 264.182);
+  --color-base-300: oklch(26.346% 0.018 262.177);
+  --color-base-content: oklch(82.901% 0.031 222.959);
+  --color-primary: oklch(86.133% 0.141 139.549);
+  --color-primary-content: oklch(17.226% 0.028 139.549);
+  --color-secondary: oklch(73.375% 0.165 35.353);
+  --color-secondary-content: oklch(14.675% 0.033 35.353);
+  --color-accent: oklch(74.229% 0.133 311.379);
+  --color-accent-content: oklch(14.845% 0.026 311.379);
+  --color-neutral: oklch(24.731% 0.02 264.094);
+  --color-neutral-content: oklch(82.901% 0.031 222.959);
+  --color-info: oklch(86.078% 0.142 206.182);
+  --color-info-content: oklch(17.215% 0.028 206.182);
+  --color-success: oklch(86.171% 0.142 166.534);
+  --color-success-content: oklch(17.234% 0.028 166.534);
+  --color-warning: oklch(86.163% 0.142 94.818);
+  --color-warning-content: oklch(17.232% 0.028 94.818);
+  --color-error: oklch(82.418% 0.099 33.756);
+  --color-error-content: oklch(16.483% 0.019 33.756);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+
+  background-color: var(--color-base-200);
+  color: var(--color-base-content);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header,
+body,
+p,
+img,
+div,
+section,
+h1,
+h2,
+h3,
+h4,
+footer,
+main {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-base-content);
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  height: 64px;
+  background-color: var(--color-base-100);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+nav {
+  display: flex;
+  flex: 0 1 500px;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.banner {
+  display: flex;
+  width: 100%;
+  height: 800px;
+  background-image: url(./public/banner.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner-title {
+  position: relative;
+  top: 25%;
+  left: 30%;
+  height: fit-content;
+  font-size: 3rem;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px;
+  gap: 32px;
+  justify-content: center;
+}
+
+.quick-link-content {
+  box-shadow: inset 0px 0px 5px black;
+  display: flex;
+  height: 350px;
+  aspect-ratio: 1/1;
+  background-color: var(--color-base-100);
+  /* border: 2px solid var(--color-primary); */
+  flex-direction: column;
+  place-items: center;
+  overflow: clip;
+}
+
+.quick-link-img {
+  max-width: 100%;
+  height: 100%;
+  max-height: 80%;
+  transition: 200ms ease;
+}
+
+.quick-link-content:hover .quick-link-img {
+  scale: 110%;
+}
+
+.quick-link-title {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-content);
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  z-index: 10;
+  box-shadow: inset 0px 0px 5px black;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  margin-top: 16px;
+  padding: 32px 32px;
+  text-align: center;
+  gap: 32px;
+  background-color: var(--color-neutral);
+  color: var(--color-neutral-content);
+}
+
+h2 {
+  font-size: 2.5rem;
+  padding-left: 16px;
+}
+
+.article-container {
+  box-shadow: inset 0px 0px 5px black;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  aspect-ratio: 1/0.5;
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-content);
+}
+
+.article-img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-title {
+  padding: 8px 0px;
+  width: 90%;
+  place-self: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.5rem;
+  line-clamp: 1;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .article-section {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    justify-content: space-around;
+    place-items: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .article-section {
+    display: flex;
+    padding: 32px;
+    gap: 32px;
+    justify-content: space-around;
+    overflow-x: scroll;
+  }
+}
+
+.title {
+  font-size: 4rem;
+  color: var(--color-secondary);
+}
+
+.spell-banner {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  filter: brightness(80%);
+  height: 300px;
+  background: url(./public/spellBanner.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.spells-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  place-content: center;
+  place-self: center;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.spell-icon {
+  margin: 16px 0px;
+  display: flex;
+  width: 200px;
+  height: auto;
+  padding: 8px;
+  background-color: var(--color-base-100);
+  border-radius: 16px;
+  position: relative;
+  overflow: clip;
+  transition: 200ms;
+}
+
+.spell-icon:hover {
+  translate: 0px -4px;
+  box-shadow: 0px 0px 16px var(--color-secondary);
+}
+
+.spell-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-links {
+  display: flex;
+  text-align: start;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 32px;
+}
+
+.sitemap {
+  width: auto;
+  font-size: 1rem;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.wiz-banner {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  filter: brightness(70%);
+  height: 300px;
+  background: url(./public/wizBanner.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.title-wiz {
+  font-size: 4rem;
+  color: var(--color-primary);
+}
+
+.wiz-icon {
+  margin: 16px 0px;
+  display: flex;
+  width: 200px;
+  height: auto;
+  padding: 8px;
+  background-color: var(--color-base-100);
+  border-radius: 16px;
+  position: relative;
+  overflow: clip;
+  transition: 200ms;
+}
+
+.wiz-icon:hover {
+  translate: 0px -4px;
+  box-shadow: 0px 0px 16px var(--color-primary);
+}
+
+.world-icon {
+  margin: 16px 0px;
+  display: flex;
+  width: 400px;
+  height: auto;
+  background-color: var(--color-base-100);
+  border-radius: 16px;
+  position: relative;
+  overflow: clip;
+  transition: 200ms;
+}
+
+.world-icon:hover {
+  translate: 0px -4px;
+  box-shadow: 0px 0px 16px var(--color-accent);
+}
